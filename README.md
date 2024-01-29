@@ -1,2 +1,2 @@
-# shared-frameworks
+# Shared Frameworks
 Репозиторий с общими библиотеками, переиспользуемыми на проектах FoxStudio
