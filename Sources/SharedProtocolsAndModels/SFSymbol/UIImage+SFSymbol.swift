@@ -1,0 +1,17 @@
+//
+//  UIImage+SFSymbol.swift
+//  DesignSystem
+//
+//  Created by Vladislav Lisianskii on 21.05.2023.
+//
+
+import UIKit
+
+extension UIImage {
+    public convenience init?(
+        sfSymbol: SFSymbolRepresentable,
+        withConfiguration configuration: SymbolConfiguration? = nil
+    ) {
+        self.init(systemName: sfSymbol.systemName, withConfiguration: configuration)
+    }
+}
