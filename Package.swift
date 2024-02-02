@@ -24,7 +24,7 @@ let package = Package(
         .target(
             name: "PersistenceCore",
             dependencies: [
-                .product(name: "CocoaLumberjack", package: "CocoaLumberjack")
+                .product(name: "CocoaLumberjackSwift", package: "CocoaLumberjack")
             ]
         ),
 
