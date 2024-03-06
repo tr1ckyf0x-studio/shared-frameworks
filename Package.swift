@@ -14,9 +14,9 @@ let package = Package(
         .library(name: "UIComponents", targets: ["UIComponents"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SnapKit/SnapKit.git", exact: "5.7.0"),
-        .package(url: "https://github.com/ekazaev/route-composer.git", exact: "2.10.5"),
-        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", exact: "3.8.2"),
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.7.0"),
+        .package(url: "https://github.com/ekazaev/route-composer.git", from: "2.10.5"),
+        .package(url: "https://github.com/CocoaLumberjack/CocoaLumberjack.git", from: "3.8.2"),
     ],
     targets: [
         // MARK: - PersistenceCore
