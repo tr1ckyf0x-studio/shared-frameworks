@@ -1,6 +1,6 @@
 //
 //  FormMandatoryable.swift
-//  Wake on LAN
+//  SharedProtocolsAndModels
 //
 //  Created by Dmitry on 24.12.2020.
 //  Copyright © 2020 Vladislav Lisianskii. All rights reserved.

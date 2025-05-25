@@ -1,11 +1,12 @@
 //
 //  URLOpener.swift
-//  AboutScreen
+//  SharedProtocolsAndModels
 //
 //  Created by Dmitry on 05.08.2021.
 //  Copyright © 2021 Vladislav Lisianskii. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public protocol OpensURL {
@@ -19,3 +20,4 @@ extension UIApplication: OpensURL {
         open(url)
     }
 }
+#endif

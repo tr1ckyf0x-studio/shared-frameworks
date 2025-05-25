@@ -1,8 +1,9 @@
 //
 //  Managed.swift
-//  Database
+//  PersistenceCore
 //
-//  Created by Vladislav Lisianskii on 19.05.2023.
+//  Created by Dmitry on 26.06.2020.
+//  Copyright © 2020 Vladislav Lisianskii. All rights reserved.
 //
 
 import CoreData
@@ -19,16 +20,13 @@ public extension Managed where Self: NSManagedObject {
         request.sortDescriptors = defaultSortDescriptors
         return request
     }
+}
 
+public extension Managed where Self: NSManagedObject {
     static var entityName: String {
         guard let name = entity().name else {
             fatalError("Name for entity \(self) is not assigned!")
         }
         return name
     }
-
-    static var defaultSortDescriptors: [NSSortDescriptor] {
-        []
-    }
-
 }

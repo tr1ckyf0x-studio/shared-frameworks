@@ -1,10 +1,11 @@
 //
 //  SFSymbol.swift
-//  DesignSystem
+//  SharedProtocolsAndModels
 //
 //  Created by Vladislav Lisianskii on 21.05.2023.
 //
 
+// TODO: Consider to remove
 public enum SFSymbol: String, SFSymbolRepresentable {
     case book
     case checkmark

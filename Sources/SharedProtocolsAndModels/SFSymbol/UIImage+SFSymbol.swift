@@ -1,10 +1,11 @@
 //
 //  UIImage+SFSymbol.swift
-//  DesignSystem
+//  SharedProtocolsAndModels
 //
 //  Created by Vladislav Lisianskii on 21.05.2023.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension UIImage {
@@ -15,3 +16,4 @@ extension UIImage {
         self.init(systemName: sfSymbol.systemName, withConfiguration: configuration)
     }
 }
+#endif

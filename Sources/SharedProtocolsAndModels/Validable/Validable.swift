@@ -1,6 +1,6 @@
 //
 //  FormValidable.swift
-//  Wake on LAN
+//  SharedProtocolsAndModels
 //
 //  Created by Vladislav Lisianskii on 17.05.2020.
 //  Copyright © 2020 Vladislav Lisianskii. All rights reserved.
