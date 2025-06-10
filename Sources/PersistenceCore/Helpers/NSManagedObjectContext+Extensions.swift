@@ -23,7 +23,17 @@ public extension NSManagedObjectContext {
         return childContext
     }
 
+    enum ContextKind {
+        case main
+        case concurrent
 
+        fileprivate var currencyType: NSManagedObjectContextConcurrencyType {
+            return switch self {
+            case .main: .mainQueueConcurrencyType
+            case .concurrent: .privateQueueConcurrencyType
+            }
+        }
+    }
 }
 
 public extension NSManagedObjectContext {
@@ -64,20 +74,6 @@ public extension NSManagedObjectContext {
                 } catch {
                     continuation.resume(throwing: error)
                 }
-            }
-        }
-    }
-}
-
-public extension NSManagedObjectContext {
-    enum ContextKind {
-        case main
-        case concurrent
-
-        fileprivate var currencyType: NSManagedObjectContextConcurrencyType {
-            return switch self {
-            case .main: .mainQueueConcurrencyType
-            case .concurrent: .privateQueueConcurrencyType
             }
         }
     }
