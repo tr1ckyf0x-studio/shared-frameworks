@@ -9,5 +9,7 @@
 import CoreGraphics
 
 public extension CGSize {
-    var inversed: CGSize { .init(width: -1 * width, height: -1 * height) }
+    @inlinable
+    @inline(__always)
+    var inverted: CGSize { .init(width: -1 * width, height: -1 * height) }
 }

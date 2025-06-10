@@ -1,6 +1,6 @@
 //
 //  Sequence+Concurrency.swift
-//  SharedProtocolsAndModels
+//  SharedExtensions
 //
 //  Created by Vladislav Lisianskii on 22.05.2023.
 //
