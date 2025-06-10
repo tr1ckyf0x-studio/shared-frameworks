@@ -10,31 +10,25 @@ let package = Package(
         .library(name: "PersistenceCore", targets: ["PersistenceCore"]),
         .library(name: "SharedExtensions", targets: ["SharedExtensions"]),
         .library(name: "SharedProtocolsAndModels", targets: ["SharedProtocolsAndModels"]),
-        .library(name: "Logger", targets: ["Logger"])
     ],
     targets: [
 
         // MARK: - PersistenceCore
 
         .target(
-            name: "PersistenceCore",
-            dependencies: [
-                .target(name: "Logger")
-            ]
+            name: "PersistenceCore"
         ),
 
         // MARK: - SharedExtensions
 
         .target(name: "SharedExtensions"),
+        .testTarget(
+            name: "SharedExtensionsTests",
+            dependencies: ["SharedExtensions"]
+        ),
 
         // MARK: - SharedProtocolsAndModels
 
         .target(name: "SharedProtocolsAndModels"),
-
-        // MARK: - Logger
-
-        .target(
-            name: "Logger"
-        )
     ]
 )

@@ -7,11 +7,10 @@
 //
 
 import CoreData
-import Logger
 
 // MARK: - CoreDataService
 
-public final class CoreDataService: CoreDataServiceProtocol, HasLogger {
+public final class CoreDataService: CoreDataServiceProtocol {
 
     public let persistentContainer: NSPersistentContainer
 
@@ -23,18 +22,15 @@ public final class CoreDataService: CoreDataServiceProtocol, HasLogger {
 
     private let managedObjectModel: NSManagedObjectModel
     private let storeType: StoreType
-    public let logger: Logger?
 
     // MARK: - Init
 
     public init(
         storeType: StoreType,
         persistentContainerName: String,
-        managedObjectModelURL: URL,
-        logger: Logger? = nil
+        managedObjectModelURL: URL
     ) {
         self.storeType = storeType
-        self.logger = logger
 
         let managedObjectModel = NSManagedObjectModel(contentsOf: managedObjectModelURL)
         guard let managedObjectModel else { fatalError("Cannot load Core Data model") }

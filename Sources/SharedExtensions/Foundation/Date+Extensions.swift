@@ -8,8 +8,7 @@
 import Foundation
 
 public extension Date {
-    func timeIntervalSinceStartOfDay() -> TimeInterval {
-        let calendar = Calendar.current
+    func timeIntervalSinceStartOfDay(in calendar: Calendar = Calendar.current) -> TimeInterval {
         let midnight = calendar.startOfDay(for: self)
         let timeInterval = timeIntervalSince(midnight)
         return timeInterval

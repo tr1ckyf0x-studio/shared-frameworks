@@ -8,14 +8,16 @@
 import Foundation
 
 public extension Array {
+    @inlinable
+    @inline(__always)
     subscript(safe index: Int) -> Element? {
         get {
-            0..<self.count ~= index ? self[index] : nil
+            guard index >= 0, index < count else { return nil }
+            return self[index]
         }
-        set(newValue) {
-            if 0..<self.count ~= index, let newValue = newValue {
-                self[index] = newValue
-            }
+        set {
+            guard let newValue, index >= 0, index < count else { return }
+            self[index] = newValue
         }
     }
 }
