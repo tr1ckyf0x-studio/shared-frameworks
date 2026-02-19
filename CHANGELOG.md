@@ -1,3 +1,7 @@
+## [1.1.1] - 19-02-2026
+
+- Added public to Coordinator protocols
+
 ## [1.1.0] - 19-02-2026
 
 - Added `Coordinator` module: `CoordinatesNavigationStack` and `CoordinatesSheet` protocols
