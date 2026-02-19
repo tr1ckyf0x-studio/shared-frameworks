@@ -9,7 +9,7 @@
 import SwiftUI
 
 @MainActor
-protocol CoordinatesNavigationStack: AnyObject {
+public protocol CoordinatesNavigationStack: AnyObject {
     associatedtype Page: Hashable
 
     var path: NavigationPath { get set }
@@ -19,7 +19,7 @@ protocol CoordinatesNavigationStack: AnyObject {
     func popToRoot()
 }
 
-extension CoordinatesNavigationStack {
+public extension CoordinatesNavigationStack {
     func push(page: Page) {
         path.append(page)
     }

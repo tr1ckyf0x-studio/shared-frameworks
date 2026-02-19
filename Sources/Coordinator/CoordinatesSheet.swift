@@ -7,7 +7,7 @@
 //
 
 @MainActor
-protocol CoordinatesSheet: AnyObject {
+public protocol CoordinatesSheet: AnyObject {
     associatedtype Sheet
 
     var sheet: Sheet? { get set }
@@ -16,7 +16,7 @@ protocol CoordinatesSheet: AnyObject {
     func dismissSheet()
 }
 
-extension CoordinatesSheet {
+public extension CoordinatesSheet {
     func presentSheet(_ sheet: Sheet) {
         self.sheet = sheet
     }
