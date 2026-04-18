@@ -19,21 +19,31 @@ Protocol-based coordinator pattern for SwiftUI navigation. Separates navigation 
 - Methods (default implementations provided): `presentSheet(_:)`, `dismissSheet()`
 - Sheet state is driven by optional value binding
 
+### `CoordinatesNavigationSplitView`
+- Constraint: `@MainActor`, `AnyObject`
+- Associated type: `SidebarItem: Hashable`
+- Required property: `var selectedSidebarItem: SidebarItem? { get set }`
+- Method (default implementation provided): `selectSidebarItem(_:)`
+- Single-selection model for `NavigationSplitView` sidebars on macOS (and single-selection lists on iPad).
+- Detail-pane state is intentionally **not** part of this protocol — detail state varies per feature and belongs in feature-specific view models.
+
 ## Usage Pattern
-Conforming types are typically `ObservableObject` classes. Expose `path` and `sheet` as `@Published`.
+Conforming types are typically `ObservableObject` or `@Observable` classes that expose `path`, `sheet`, and/or `selectedSidebarItem`.
 
 ```swift
 @MainActor final class MyCoordinator: ObservableObject,
-    CoordinatesNavigationStack, CoordinatesSheet {
+    CoordinatesNavigationStack, CoordinatesSheet, CoordinatesNavigationSplitView {
     @Published var path = NavigationPath()
     @Published var sheet: MySheet?
+    @Published var selectedSidebarItem: MySidebarItem?
 }
 ```
 
 ## Constraints
-- Both protocols are `@MainActor` — conforming types must also be `@MainActor` or isolated.
+- All three protocols are `@MainActor` — conforming types must also be `@MainActor` or isolated.
 - `AnyObject` constraint — only classes can conform, not structs or enums.
 - `Page` must be `Hashable` (required by `NavigationPath.append`).
+- `SidebarItem` must be `Hashable` (required by `List(selection:)`).
 - No UIKit dependency — SwiftUI only.
 
 ## Dependencies
