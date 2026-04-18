@@ -70,6 +70,19 @@ final class AppCoordinator: ObservableObject, CoordinatesSheet {
 }
 ```
 
+Implement `CoordinatesNavigationSplitView` for a macOS `NavigationSplitView` sidebar:
+
+```swift
+@MainActor
+final class AppCoordinator: ObservableObject, CoordinatesNavigationSplitView {
+    enum SidebarItem: Hashable { case inbox, settings }
+    @Published var selectedSidebarItem: SidebarItem?
+    // selectSidebarItem(_:) is provided by a default implementation
+}
+```
+
+The three protocols compose — a single coordinator can drive a sidebar, a navigation stack inside the content pane, and sheet presentation at the same time.
+
 ### PersistenceCore
 
 ```swift

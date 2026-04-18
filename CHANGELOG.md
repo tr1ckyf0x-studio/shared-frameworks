@@ -1,3 +1,8 @@
+## [1.2.0] - 18-04-2026
+
+- Added `Coordinator` protocol `CoordinatesNavigationSplitView` for
+  driving `NavigationSplitView` sidebar selection from a coordinator.
+
 ## [1.1.1] - 19-02-2026
 
 - Added public to Coordinator protocols
